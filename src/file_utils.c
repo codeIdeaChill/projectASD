@@ -1,7 +1,7 @@
 #include<stdio.h>
 
 int main(){
- printf("by menouar");
+    printf("by menouar");
 
     return 0;
 }
