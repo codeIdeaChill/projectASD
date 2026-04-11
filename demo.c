@@ -2,3 +2,5 @@
 
 int main(){
     printf("hello from linux");
+    printf("i add .gitignore to ignore .exe file ");
+}

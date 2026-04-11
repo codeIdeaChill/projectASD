@@ -1,0 +1,7 @@
+*.exe
+# Ignore everything
+*
+# But do NOT ignore directories (so we can see into them)
+!*/
+# And do NOT ignore files that have a dot (extensions)
+!*.*
