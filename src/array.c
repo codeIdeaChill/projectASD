@@ -42,18 +42,32 @@ int linearSearch(int arr[], int size, int value){
     return -1;
 
 }
+
+int minPos(int arr[], int size, int index){
+    int min = arr[index];
+    int pos = index;
+    for(int i = index; i < size; i++){
+        if(min > arr[i]){
+            min = arr[i];
+            pos = i;
+        }
+    }
+    return pos;
+}
+
 void sort(int arr[], int size){
     int tmp = 0;
-    for(int i = 0; i < size - 1; ++i){
-        for(int j = 1; j < size; ++j){
-            if(arr[i] > arr[j]){
-                tmp = arr[i];
-                arr[i] = arr[j];
-                arr[j] = tmp;
-            }
-        }    
+    for (int i = 0; i < size - 1; ++i){
+        int pos = minPos(arr, size, i + 1);
+        if(arr[i] > arr[pos]){
+            tmp = arr[i];
+            arr[i] = arr[pos];
+            arr[pos] = tmp;
+        }
     }
+
 }
+
 
 
 int binarySearch(int arr[], int size, int value){
@@ -91,7 +105,7 @@ int main(){
 
     printArray(arr, size);
 
-    printf("the value in %d position \n", binarySearch(arr, size, 2)); 
+    printf("the value in %d position \n", binarySearch(arr, size, 1)); 
     printArray(arr, size);
     
     
