@@ -6,6 +6,7 @@ void initArray(int arr[], int* size){
     *size = 0;
 }
 
+//print array
 void printArray(int arr[], int size){
     printf("[");
     for(int i = 0; i < size; ++i){
@@ -15,6 +16,7 @@ void printArray(int arr[], int size){
     printf("]\n");
 }
 
+// insert value in specific position 
 int insertAt(int arr[], int *size, int index, int value){
     //check for errors
     if(index < 0 || index > *size)return -1;
@@ -28,6 +30,7 @@ int insertAt(int arr[], int *size, int index, int value){
     return 0;
 }
 
+//delete value from array
 int deleteAt(int arr[], int* size, int index){
     if(index < 0 || index > *size)return -1;
     if(*size >= MAX_1D)return -1;
@@ -35,6 +38,8 @@ int deleteAt(int arr[], int* size, int index){
     (*size)--;
     return 0;
 }
+
+// linear search for the value 
 int linearSearch(int arr[], int size, int value){
     for(int i = 0; i < size; i++){
         if(arr[i] == value)return i;
@@ -43,6 +48,30 @@ int linearSearch(int arr[], int size, int value){
 
 }
 
+// function for swap two number use it in sorting 
+void swap(int* x, int* y){
+    int tmp = *x;
+    *x = *y;
+    *y = tmp;
+}
+
+//bubble sort sotring each two element
+void bubbleSort(int arr[], int size){
+    bool swapped;
+    for(int i = 0; i < size - 1; ++i){
+        swapped = false;
+        for(int j = 0; j < size - i - 1; ++j){
+            if(arr[j] > arr[j + 1]){
+                swap(&arr[j], &arr[j + 1]);
+                swapped = true;
+            }
+        }
+        if(swapped == false)break;
+    }
+}
+
+
+// find position of min of an array 
 int minPos(int arr[], int size, int index){
     int min = arr[index];
     int pos = index;
@@ -55,14 +84,13 @@ int minPos(int arr[], int size, int index){
     return pos;
 }
 
-void sort(int arr[], int size){
-    int tmp = 0;
+// selection sort need minpos function
+void selectionSort(int arr[], int size){
+    
     for (int i = 0; i < size - 1; ++i){
         int pos = minPos(arr, size, i + 1);
         if(arr[i] > arr[pos]){
-            tmp = arr[i];
-            arr[i] = arr[pos];
-            arr[pos] = tmp;
+            swap(&arr[i], &arr[pos]);
         }
     }
 
@@ -71,8 +99,6 @@ void sort(int arr[], int size){
 
 
 int binarySearch(int arr[], int size, int value){
-    sort(arr, size);
-
     int low = 0, hight = size - 1;
     int mid = (hight + low) / 2;
     while(arr[mid] != value){
@@ -102,11 +128,10 @@ int main(){
     insertAt(arr, &size, 2, 4);
     insertAt(arr, &size, 3, 1);
 
-
+    bubbleSort(arr, size);
     printArray(arr, size);
 
     printf("the value in %d position \n", binarySearch(arr, size, 1)); 
-    printArray(arr, size);
     
     
     
