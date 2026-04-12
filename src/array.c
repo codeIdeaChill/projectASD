@@ -113,6 +113,12 @@ int binarySearch(int arr[], int size, int value){
 
 }
 
+//array sum
+
+
+
+
+
 
 int main(){
     int size = 0;
