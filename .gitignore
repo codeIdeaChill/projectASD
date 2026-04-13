@@ -1,4 +1,5 @@
 *.exe
+src/*.exe
 # Ignore everything
 *
 # But do NOT ignore directories (so we can see into them)
