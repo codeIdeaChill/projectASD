@@ -1,6 +1,11 @@
 #include "../include/linked_list.h"
 
 
+//WARNNING
+//don't touch my pain please go ahead from here
+
+
+
 void initList(ArrayList* list){
     list->head = 0;
     list->size = 0;
@@ -28,6 +33,22 @@ int insertBeginning(ArrayList* list, int value){
     
 }
 
+
+int insertEnd(ArrayList* list, int value){
+    static int end = 0;
+    int index = findFree(list);
+    if(index == Null){
+        printf("List is full");
+        return Null;
+    }
+    list->data[index] = value;
+    list->next[end] = index;
+    end = index;
+    list->size++;
+
+
+}
+
 void displayList(ArrayList* list){
     int index = list->head;
     for(int i = 0; i < list->size; i++){
@@ -44,11 +65,14 @@ void displayList(ArrayList* list){
 int main(){
     ArrayList list;
     initList(&list);
-    insertBeginning(&list, 4);
-    insertBeginning(&list, 6);
-    insertBeginning(&list, 2);
-    insertBeginning(&list, 1);
-    insertBeginning(&list, 3);
+    insertEnd(&list, 4);
+    insertEnd(&list, 6);        
+    insertEnd(&list, 2);
+    insertEnd(&list, 3);
+
+    /*
+    output:     4 -> 6 -> 2 -> 3 -> NULL
+    */
     displayList(&list); 
     return 0;
 }
