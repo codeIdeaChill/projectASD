@@ -116,7 +116,8 @@ int binarySearch(int arr[], int size, int value){
 //array sum
 int sumArray(int arr[], int size) {
 
-    if(arr == NULL||size<=0){
+    if(arr == NULL || size == 0){   //you should check if size == 0 
+                                    //not size <= 0
         return 0;
     }
     int sum=0;
@@ -132,20 +133,25 @@ int sumArray(int arr[], int size) {
 
 
 int main(){
-    int size = 0;
-    int arr[MAX_1D];
+    int size = 0;   //definition size
+    int arr[MAX_1D];//difinition of array
+
+    // initialization the array with size = 0
     initArray(arr, &size);
 
 
-    insertAt(arr, &size, 0, 5);
-    insertAt(arr, &size, 1, 3);
-    insertAt(arr, &size, 2, 4);
-    insertAt(arr, &size, 3, 1);
+    insertAt(arr, &size, 0, 5);//insert 5 in position 0
+    insertAt(arr, &size, 1, 3);//insert 3 in position 1
+    insertAt(arr, &size, 2, 4);//insert 4 in position 2 
+    insertAt(arr, &size, 3, 1);//insert 1 in position 3 
 
-    bubbleSort(arr, size);
-    printArray(arr, size);
+
+    
+    bubbleSort(arr, size);// this func for sort the array
+    printArray(arr, size);// to print the array
 
     printf("the value in %d position \n", binarySearch(arr, size, 1)); 
+    printf("the sum of array %d \n", sumArray(arr, size)); 
     
     
     
