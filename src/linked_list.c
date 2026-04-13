@@ -35,15 +35,14 @@ int insertBeginning(ArrayList* list, int value){
 
 
 int insertEnd(ArrayList* list, int value){
-    static int end = 0;
     int index = findFree(list);
     if(index == Null){
         printf("List is full");
         return Null;
     }
     list->data[index] = value;
-    list->next[end] = index;
-    end = index;
+    int end = findFree(list); 
+    list->next[index] = end;
     list->size++;
 
 
