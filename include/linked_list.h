@@ -1,12 +1,9 @@
 #include <stdio.h>
-#include <common.h>
+#include "common.h"
+
+#define Null -1
 
 
-
-typedef struct Node{
-    int data;
-    struct Node* next;
-}Node;
-
-
-void initList(Node* node);
+void initList(ArrayList* list);
+int insertBeginning(ArrayList* list, int value);
+void displayList(ArrayList* list);

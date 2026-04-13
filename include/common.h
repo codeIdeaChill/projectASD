@@ -1,5 +1,5 @@
-#ifndef COMMON_H
-#define COMMON_H
+#pragma once 
+
 
 #define MAX_1D          100
 #define MAX_ROWS        20
@@ -8,6 +8,7 @@
 #define MAX_STACK_SIZE  50
 #define MAX_QUEUE_SIZE  50
 #define MAX_STRING_LEN  256
+
 
 /* Cursor-based singly linked list */
 typedef struct {
@@ -40,5 +41,3 @@ typedef struct {
     int rear;   // index of last element
     int count;  // number of elements
 } Queue;
-
-#endif
