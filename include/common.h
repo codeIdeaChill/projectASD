@@ -9,7 +9,6 @@
 #define MAX_QUEUE_SIZE  50
 #define MAX_STRING_LEN  256
 
-
 /* Cursor-based singly linked list */
 typedef struct {
     int data[MAX_LIST_SIZE];
