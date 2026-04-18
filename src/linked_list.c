@@ -10,13 +10,14 @@ void initList(ArrayList* list){
     list->head = -1;
     list->size = 0;
     for(int i = 0; i < MAX_LIST_SIZE; i++){
-        list->next[i] = -1;
+        list->next[i] = Null;
+        list->data[i] = Null;
     } 
 }
 
 int findFree(ArrayList list){
     for(int i = 0; i < MAX_LIST_SIZE; i++){
-        if(list.next[i] == Null)return i;
+        if(list.data[i] == Null)return i;
     }
     return Null;
 }
@@ -57,6 +58,25 @@ int insertEnd(ArrayList* list, int value){
     list->size++;
 }
 
+int insertAtPosition(ArrayList* list, int pos, int value){
+    int index = findFree(*list);
+    if(index == Null){
+        printf("List is Full \n");
+        return Null;
+    }
+    if(pos == 0){
+        list->data[index] = value; 
+        list->next[index] = list->head;
+        list->head = index;
+    }else{
+        list->data[index] = value; 
+        list->next[index] = list->next[pos - 1];
+        list->next[pos - 1] = index;
+    }
+    list->size++;
+
+}
+
 void displayList(ArrayList* list){
     int index = list->head;
     int i = 0;
@@ -78,10 +98,15 @@ int main(){
     insertEnd(&list, 2);
     insertEnd(&list, 3);
 
+    
     /*
     AddEnd output:     4 -> 6 -> 2 -> 3 -> NULL
     AddBegining output: 3 -> 2 -> 6 -> 4 -> NULL
     */
+    displayList(&list); 
+
+
+    insertAtPosition(&list, 3, 5);
     displayList(&list); 
     return 0;
 }
