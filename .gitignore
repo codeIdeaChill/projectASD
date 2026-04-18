@@ -1,9 +1,38 @@
-*.exe
-src/*.exe
 # Ignore everything
 *
+*.exe
+src/*.exe
+
 # But do NOT ignore directories (so we can see into them)
 !*/
-# And do NOT ignore files that have a dot (extensions)
-!*.*
+
+
 ads2_project/
+
+
+# Allow directories (so Git can traverse them)
+!*/
+
+# Allow specific files
+!demo.c
+!linked_list.c
+!array.c
+!file_utils.c
+!queue.c
+!stack.c
+!string_utils.c
+
+!linked_list.h
+!array.h
+!file_utils.h
+!queue.h
+!stack.h
+!string_utils.h
+!common.h
+
+# Allow entire folders (example)
+!src/
+!include/
+!bonus/
+# Allow specific file types (optional)
+!*.md

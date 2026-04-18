@@ -7,21 +7,24 @@
 
 
 void initList(ArrayList* list){
-    list->head = 0;
+    list->head = -1;
     list->size = 0;
     for(int i = 0; i < MAX_LIST_SIZE; i++){
-        list->next[i] = Null;
+        list->next[i] = -1;
     } 
 }
 
-int findFree(ArrayList* list){
+int findFree(ArrayList list){
     for(int i = 0; i < MAX_LIST_SIZE; i++){
-        if(list->next[i] == Null && i != list->head)return i;
+        if(list.next[i] == Null)return i;
     }
     return Null;
 }
+
+
+
 int insertBeginning(ArrayList* list, int value){
-    int index = findFree(list);
+    int index = list->size;
     if(index == Null){
         printf("List is full");
         return Null;
@@ -35,27 +38,33 @@ int insertBeginning(ArrayList* list, int value){
 
 
 int insertEnd(ArrayList* list, int value){
-    int index = findFree(list);
-    if(index == Null){
+    if(list->size >= MAX_LIST_SIZE){
         printf("List is full");
         return Null;
     }
+    int index = list->size;
     list->data[index] = value;
-    int end = findFree(list); 
-    list->next[index] = end;
+    list->next[index] = Null;
+    if(list->head == Null){
+        list->head = index;
+    }else{
+        int current = list->head;
+        while(list->next[current] != Null){
+            current = list->next[current]; 
+        }
+        list->next[current] = index;
+    }
     list->size++;
-
-
 }
 
 void displayList(ArrayList* list){
     int index = list->head;
-    for(int i = 0; i < list->size; i++){
-        if(index != Null){
-            printf("%d -> ", list->data[index]);
-            index = list->next[index];
-        } 
-    }
+    int i = 0;
+    while(index != Null && i < list->size){
+        printf("%d -> ", list->data[index]);
+        index = list->next[index];
+        i++;
+    } 
     printf("NULL! ");
 }
 
@@ -70,7 +79,8 @@ int main(){
     insertEnd(&list, 3);
 
     /*
-    output:     4 -> 6 -> 2 -> 3 -> NULL
+    AddEnd output:     4 -> 6 -> 2 -> 3 -> NULL
+    AddBegining output: 3 -> 2 -> 6 -> 4 -> NULL
     */
     displayList(&list); 
     return 0;
