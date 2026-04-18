@@ -191,7 +191,27 @@ int sumArray(int arr[], int size) {
     }
     return sum;
 }
-    
+//array average
+double averageArray(int arr[], int size){
+if (size==0){
+    return 0.0;
+
+}
+double sum=0.0;
+for(int i=0;i<size;i++){
+    sum=sum+arr[i];
+}
+
+double average = sum / (double)size; 
+
+return average;
+
+
+
+
+
+}
+
     
 
 
@@ -209,7 +229,11 @@ int main(){
     insertAt(arr, &size, 1, 3);//insert 3 in position 1
     insertAt(arr, &size, 2, 4);//insert 4 in position 2 
     insertAt(arr, &size, 3, 1);//insert 1 in position 3 
+// 1. calling the function
+double avg = averageArray(arr, size);
 
+// 2. displaying avg
+printf("the average of array is %.f\n", avg);
 
     
     //bubbleSort(arr, size);// this func for sort the array

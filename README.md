@@ -7,7 +7,7 @@ anything
 
 ## menouar
 ```
-sumarry(),
+sumarry(),1
 avrgarray(),
 findmax(),
 findmin(),
