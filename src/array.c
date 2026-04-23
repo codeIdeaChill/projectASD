@@ -213,11 +213,8 @@ int findMax(int arr[], int size){
 }
 //find Min
 int findMin(int arr[], int size) {
-    int Min; 
-    Min = arr[0]; 
-    
-    for(int i = 1; i < size; i++) {
-        
+    int Min = arr[0];  
+    for(int i = 1; i < size; i++) { 
         if (arr[i] < Min) { 
             Min = arr[i]; 
         }
