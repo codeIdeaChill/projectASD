@@ -186,7 +186,7 @@ int sumArray(int arr[], int size) {
         return 0;
     }
     int sum=0;
-    for(int i=0;i<size;i++){
+    for(int i=1;i<size;i++){
         sum=sum+arr[i];
     }
     return sum;
@@ -200,9 +200,25 @@ double averageArray(int arr[], int size){
     int sum = sumArray(arr, size);
     return (double)sum / (double)size;
 }
+//find max 
+int findMax(int arr[], int size){
+    int Max; 
+     Max= arr[0];   
+      for(int i=1;i<size;i++){
+           if (arr[i] > Max) {
+    Max = arr[i];
+           }
 
+
+       }
+
+return Max;
+
+
+
+
+}
     
-
 
 
 
@@ -223,8 +239,16 @@ int main(){
 
     // 2. displaying avg
     printf("the average of array is %f\n", avg);
-
     
+    
+    int finale_Max; 
+    finale_Max = findMax(arr, size);// calling the function find max
+    
+    // displaying the max 
+    printf("the max is %d\n", finale_Max);
+    
+
+
     //bubbleSort(arr, size);// this func for sort the array
     //insertionSort(arr,size);
     mergeSort(arr,0,size - 1);
