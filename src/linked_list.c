@@ -6,35 +6,15 @@
 
 
 
-void initList(ArrayList* list){
-    list->head = -1;
-    list->size = 0;
-    for(int i = 0; i < MAX_LIST_SIZE; i++){
-        list->next[i] = Null;
-        list->data[i] = Null;
-    } 
+void initList(Node* list){
+    list->next = NULL;
 }
 
-int findFree(ArrayList list){
-    for(int i = 0; i < MAX_LIST_SIZE; i++){
-        if(list.data[i] == Null)return i;
-    }
-    return Null;
-}
+int insertBeginning(Node* list, int value){
+    list->data = value;
+    Node* newnode = (Node*)malloc(sizeof(Node*));
+    newnode->next = list; 
 
-
-
-int insertBeginning(ArrayList* list, int value){
-    int index = list->size;
-    if(index == Null){
-        printf("List is full");
-        return Null;
-    }
-    list->data[index] = value;
-    list->next[index] = list->head;
-    list->head = index;
-    list->size++;
-    
 }
 
 

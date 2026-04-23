@@ -202,21 +202,14 @@ double averageArray(int arr[], int size){
 }
 //find max 
 int findMax(int arr[], int size){
-    int Max; 
-     Max= arr[0];   
-      for(int i=1;i<size;i++){
-           if (arr[i] > Max) {
-    Max = arr[i];
-           }
+    int Max = arr[0];   
+    for(int i=1;i<size;i++){
+        if (arr[i] > Max) {
+            Max = arr[i];
+        }
+    }
 
-
-       }
-
-return Max;
-
-
-
-
+    return Max;
 }
     
 
