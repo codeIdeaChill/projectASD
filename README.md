@@ -2,7 +2,20 @@
 
 ## adem
 ```
-anything
+initArray
+printArray
+insertAt
+deleteAt
+linearSearch
+swap
+bubbleSort
+minPos
+selectionSort
+insertionSort
+merge
+mergeSort
+binarySearch
+
 ```
 
 ## menouar
@@ -12,4 +25,20 @@ avrgarray(),1
 findmax(),1
 findmin(),1
 freearray()
+```
+
+## hachichi
+```
+nothing yet
+```
+
+
+## ayoub
+```
+nothing yet
+```
+
+## nina
+```
+nothing yet
 ```

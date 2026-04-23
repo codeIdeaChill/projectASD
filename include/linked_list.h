@@ -1,9 +1,10 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "common.h"
 
 #define Null -1
 
 
-void initList(ArrayList* list);
-int insertBeginning(ArrayList* list, int value);
-void displayList(ArrayList* list);
+void initList(Node* list);
+int insertBeginning(Node* list, int value);
+void displayList(Node* list);
