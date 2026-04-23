@@ -8,8 +8,8 @@ anything
 ## menouar
 ```
 sumarry(),1
-avrgarray(),
-findmax(),
-findmin(),
+avrgarray(),1
+findmax(),1
+findmin(),1
 freearray()
 ```
