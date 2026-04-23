@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int main(){
-    printf("try here");
+    printf("edit by Lyna\n");
     //try to modified
     //aaa
     return 0;
