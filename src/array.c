@@ -218,7 +218,22 @@ return Max;
 
 
 }
+//find Min
+int findMin(int arr[], int size) {
+    int Min; 
+    Min = arr[0]; 
     
+    for(int i = 1; i < size; i++) {
+        
+        if (arr[i] < Min) { 
+            Min = arr[i]; 
+        }
+    }
+    
+    return Min;
+}
+
+
 
 
 
@@ -244,8 +259,13 @@ int main(){
     int finale_Max; 
     finale_Max = findMax(arr, size);// calling the function find max
     
-    // displaying the max 
+    // displaying the max
     printf("the max is %d\n", finale_Max);
+    int finale_Min; 
+    finale_Min = findMin(arr, size);// calling the function find min
+    
+    // displaying the min
+    printf("the min is %d\n", finale_Min);
     
 
 
