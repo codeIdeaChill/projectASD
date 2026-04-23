@@ -1,8 +1,8 @@
 #include <stdio.h>
 
 int main(){
-    printf("edit by Lyna\n");
+    printf("edit by Lynaaaa\n");
     //try to modified
-    //aaa
+
     return 0;
 }
