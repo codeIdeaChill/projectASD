@@ -1,6 +1,7 @@
 //all the lib is declared in array.h 
 #include "../include/array.h"
-#include <stdlib.h>
+
+
 // the initializition the size of array to 0 to become an empty array
 void initArray(int arr[], int* size){
     *size = 0;
@@ -219,7 +220,7 @@ int* createDynamicArray(int capacity) {
 
     int* arr = malloc(capacity * sizeof(int));
 
-    // التحقق مما إذا كان الحجز قد فشل
+    // check for observing space 
     if (arr == NULL) {
         printf("Error: Memory allocation failed!\n");
         return NULL;
@@ -270,10 +271,15 @@ int main(){
         printf("Array allocated successfully.\n");
     }
 
+    insertAt(myArray, &size, 0, 5);//insert 5 in position 0
+    insertAt(myArray, &size, 1, 2);//insert 5 in position 0
+    insertAt(myArray, &size, 2, 4);//insert 5 in position 0
+    insertAt(myArray, &size, 3, 7);//insert 5 in position 0
+    insertAt(myArray, &size, 4, 8);//insert 5 in position 0
     //bubbleSort(arr, size);// this func for sort the array
     //insertionSort(arr,size);
     mergeSort(arr,0,size - 1);
-    printArray(arr, size);// to print the array
+    printArray(myArray, size);// to print the array
 
     printf("the value in %d position \n", binarySearch(arr, size, 1)); 
     printf("the sum of array %d \n", sumArray(arr, size)); 
