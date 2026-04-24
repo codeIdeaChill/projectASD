@@ -51,7 +51,28 @@ Node* insertAtPosition(Node* list, int pos, int value){
     return list;
 }
 
+Node* deleteBeginning(Node* list){
+    Node* head = list->next;
+    free(list);
 
+    return head;
+
+}
+
+Node* deleteEnd(Node* list){
+    Node* head = list;
+    if(head->next == NULL){
+        free(head);
+        return NULL;
+    }
+    while(head->next->next != NULL){
+        head = head->next;
+    }
+    Node* temp = head->next;
+    head->next = NULL;
+    free(temp);
+    return list;
+}
 
 
 
@@ -73,9 +94,13 @@ int main(){
     list = insertEnd(list, 6);
     list = insertEnd(list, 2);
     list = insertEnd(list, 3);
+    list = deleteBeginning(list);
     displayList(list); 
-    list = insertAtPosition(list, 2, 5);
     
+    list = deleteEnd(list);
+    list = deleteEnd(list);
+    list = deleteEnd(list);
+    list = deleteEnd(list);
     /*
     AddEnd output:      1 -> 4 -> 6 -> 2 -> 3 -> NULL
     AddBegining output: 1 -> 3 -> 2 -> 6 -> 4 -> NULL
