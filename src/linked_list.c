@@ -4,7 +4,7 @@
 //WARNNING
 //don't touch my pain please go ahead from here
 
-
+// signly liked list
 
 Node* initList(Node* list){
     list = (Node*)malloc(sizeof(Node));
@@ -204,7 +204,16 @@ Node* mergeSortedLists(Node* a, Node* b, Node* list){
     return list;
 }
 
+//doubly linked list
 
+void initListDLL(DLL* list){
+    list->head = list->tail = NULL
+    list->size = 0;
+}
+
+int insertBeginningDLL(DLL* list, int value){
+   // i'am tiered for complete it :(  
+}
 
 
 // function for display linked list
