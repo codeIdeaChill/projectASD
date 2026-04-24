@@ -52,6 +52,10 @@ Node* insertAtPosition(Node* list, int pos, int value){
 }
 
 Node* deleteBeginning(Node* list){
+    if(list == NULL){
+        printf("List is empty! \n");
+        return NULL;
+    }
     Node* head = list->next;
     free(list);
 
@@ -61,6 +65,10 @@ Node* deleteBeginning(Node* list){
 
 Node* deleteEnd(Node* list){
     Node* head = list;
+    if(head == NULL){
+        printf("List is empty! \n");
+        return NULL;
+    }
     if(head->next == NULL){
         free(head);
         return NULL;
@@ -74,16 +82,43 @@ Node* deleteEnd(Node* list){
     return list;
 }
 
+Node* deleteByValue(Node* list, int value){
+    if(list == NULL){
+        printf("List is empty! \n");
+        return NULL;
+    }
+    if(list->data == value){
+        Node* temp = list;
+        list = list->next;
+        free(temp);
+        return list;
+    }
+    
+    Node* head = list;
+    while(head->next != NULL){
+        if(head->next->data == value){
+            Node* temp = head->next;
+            head->next = temp->next;
+            free(temp);
+            return list;
+        }
+        head = head->next;
+    }
+
+    return list;
+}
+
 
 
 // function for display linked list
 void displayList(Node* list){
     Node* head = list;
     while(head != NULL){
-        printf("%d -> ", head->data);
+        printf("[%d] -> ", head->data);
+        if(head->next == NULL)printf("[NULL]");
         head = head->next;
     } 
-    printf("NULL! ");
+    printf("\n");
 }
 
 
@@ -97,13 +132,10 @@ int main(){
     list = deleteBeginning(list);
     displayList(list); 
     
-    list = deleteEnd(list);
-    list = deleteEnd(list);
-    list = deleteEnd(list);
-    list = deleteEnd(list);
+    list = deleteByValue(list, 1);
     /*
-    AddEnd output:      1 -> 4 -> 6 -> 2 -> 3 -> NULL
-    AddBegining output: 1 -> 3 -> 2 -> 6 -> 4 -> NULL
+    AddEnd output:       4 -> 6 -> 2 -> 3 -> NULL
+    AddBegining output:  3 -> 2 -> 6 -> 4 -> NULL
     */
     displayList(list); 
 

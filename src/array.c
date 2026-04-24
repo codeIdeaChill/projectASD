@@ -106,23 +106,19 @@ void insertionSort(int arr[], int size){
 }
 
 
-void merge(int arr[], int l, int m, int r){
+void merge(int arr[], int left, int mid, int right){
 
-    int n1 = m - l + 1;
-    int n2 = r - m;
-    
+    int n1 = mid - left + 1;
+    int n2 = right - mid; 
     int L[n1], R[n2];
 
     for (int i = 0; i < n1; ++i){
-        L[i] = arr[l + i];
+        L[i] = arr[left + i];
     }
     for (int j = 0; j < n2; ++j){
-        R[j] = arr[m + 1 +j];
+        R[j] = arr[mid + 1 +j];
     }
-
-
-    int i =0, j=0, k =l;
-
+    int i = 0, j = 0, k = left;
     while(i < n1 && j < n2){
         if(L[i] <= R[j]){
             arr[k] = L[i];
@@ -182,21 +178,17 @@ int binarySearch(int arr[], int size, int value){
 int sumArray(int arr[], int size) {
 
     if(arr == NULL || size == 0){   //you should check if size == 0 
-                                    //not size <= 0
         return 0;
     }
     int sum=0;
-    for(int i=1;i<size;i++){
-        sum=sum+arr[i];
+    for(int i = 0;i < size; i++){
+        sum = sum + arr[i];
     }
     return sum;
 }
 //array average
 double averageArray(int arr[], int size){
-    if (size==0){
-        return 0;
-
-    }
+    if (size == 0)return 0;
     int sum = sumArray(arr, size);
     return (double)sum / (double)size;
 }
@@ -239,12 +231,11 @@ int main(){
     insertAt(arr, &size, 1, 3);//insert 3 in position 1
     insertAt(arr, &size, 2, 4);//insert 4 in position 2 
     insertAt(arr, &size, 3, 1);//insert 1 in position 3 
+    
     // 1. calling the function
     double avg = averageArray(arr, size);
-
     // 2. displaying avg
-    printf("the average of array is %f\n", avg);
-    
+    printf("the average of array is %lf\n", avg);
     
     int finale_Max; 
     finale_Max = findMax(arr, size);// calling the function find max

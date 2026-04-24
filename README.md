@@ -5,7 +5,7 @@
 initArray, printArray, insertAt, deleteAt, linearSearch, swap
 bubbleSort, minPos, selectionSort, insertionSort,merge, mergeSort
 binarySearch, initList, createnewNode, insertBeginning, insertEnd
-insertAtPosition, displayList
+insertAtPosition, displayList, deleteBeginning, deleteEnd, deleteByValue
 
 ```
 
