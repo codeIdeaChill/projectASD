@@ -1,6 +1,6 @@
 //all the lib is declared in array.h 
 #include "../include/array.h"
-
+#include <stdlib.h>
 // the initializition the size of array to 0 to become an empty array
 void initArray(int arr[], int* size){
     *size = 0;
@@ -214,7 +214,19 @@ int findMin(int arr[], int size) {
     
     return Min;
 }
+// create a daynmaique array
+int* createDynamicArray(int capacity) {
 
+    int* arr = malloc(capacity * sizeof(int));
+
+    // التحقق مما إذا كان الحجز قد فشل
+    if (arr == NULL) {
+        printf("Error: Memory allocation failed!\n");
+        return NULL;
+    }
+
+    return arr;
+}
 
 
 
@@ -247,8 +259,16 @@ int main(){
     
     // displaying the min
     printf("the min is %d\n", finale_Min);
-    
 
+    int capacity = 5;
+
+    
+    int* myArray = createDynamicArray(capacity);
+
+    // ا
+    if (myArray != NULL) {
+        printf("Array allocated successfully.\n");
+    }
 
     //bubbleSort(arr, size);// this func for sort the array
     //insertionSort(arr,size);
