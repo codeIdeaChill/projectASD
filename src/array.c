@@ -233,58 +233,41 @@ int* createDynamicArray(int capacity) {
 
 
 int main(){
-    int size = 0;   //definition size
+    int size;   //definition size
     int arr[MAX_1D];//difinition of array
 
     // initialization the array with size = 0
     initArray(arr, &size);
-
 
     insertAt(arr, &size, 0, 5);//insert 5 in position 0
     insertAt(arr, &size, 1, 3);//insert 3 in position 1
     insertAt(arr, &size, 2, 4);//insert 4 in position 2 
     insertAt(arr, &size, 3, 1);//insert 1 in position 3 
     
+    printArray(arr, size);
     // 1. calling the function
     double avg = averageArray(arr, size);
     // 2. displaying avg
     printf("the average of array is %lf\n", avg);
     
-    int finale_Max; 
-    finale_Max = findMax(arr, size);// calling the function find max
-    
+    int finale_Max = findMax(arr, size);    
     // displaying the max
     printf("the max is %d\n", finale_Max);
-    int finale_Min; 
-    finale_Min = findMin(arr, size);// calling the function find min
-    
+
+    int finale_Min = findMin(arr, size);
     // displaying the min
     printf("the min is %d\n", finale_Min);
 
-    int capacity = 5;
-
-    
-    int* myArray = createDynamicArray(capacity);
-
-    // ا
-    if (myArray != NULL) {
-        printf("Array allocated successfully.\n");
-    }
-
-    insertAt(myArray, &size, 0, 5);//insert 5 in position 0
-    insertAt(myArray, &size, 1, 2);//insert 5 in position 0
-    insertAt(myArray, &size, 2, 4);//insert 5 in position 0
-    insertAt(myArray, &size, 3, 7);//insert 5 in position 0
-    insertAt(myArray, &size, 4, 8);//insert 5 in position 0
-    //bubbleSort(arr, size);// this func for sort the array
-    //insertionSort(arr,size);
     mergeSort(arr,0,size - 1);
-    printArray(myArray, size);// to print the array
-
     printf("the value in %d position \n", binarySearch(arr, size, 1)); 
-    printf("the sum of array %d \n", sumArray(arr, size)); 
-    
-    
+    printf("the sum of array: %d \n", sumArray(arr, size)); 
+    int capacity = 0; 
+    int* array = createDynamicArray(capacity);
+    insertAt(array, &capacity, 0, 1);//insert 1 in position 3 
+    insertAt(array, &capacity, 1, 5);//insert 1 in position 3 
+    insertAt(array, &capacity, 2, 2);//insert 1 in position 3 
+    insertAt(array, &capacity, 3, 3);//insert 1 in position 3 
+    printArray(array, capacity);
     
     return 0;
 }
