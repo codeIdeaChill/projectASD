@@ -1,6 +1,5 @@
 //all the lib is declared in array.h 
 #include "../include/array.h"
-#include <stdlib.h>
 
 // the initializition the size of array to 0 to become an empty array
 void initArray(int arr[], int* size){
