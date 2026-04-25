@@ -232,8 +232,9 @@ int* createDynamicArray(int capacity) {
     return arr;
 }
 
-void freeArray(int* arr) {
+int* freeArray(int* arr) {
     free(arr);
+    return NULL;
 }
 
 int main(){
@@ -276,8 +277,7 @@ int main(){
     insertAt(array, &capacity, 3, 3);
     printArray(array, capacity);
     
-    freeArray(array);
-    array = NULL;
+    array = freeArray(array);
     if(array == NULL)printf("Array freed and pointer set to NULL.\n");
     printArray(array, capacity);
     return 0;
