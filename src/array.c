@@ -1,6 +1,6 @@
 //all the lib is declared in array.h 
 #include "../include/array.h"
-
+#include <stdlib.h>
 
 // the initializition the size of array to 0 to become an empty array
 void initArray(int arr[], int* size){
@@ -229,8 +229,9 @@ int* createDynamicArray(int capacity) {
     return arr;
 }
 
-
-
+void freeArray(int* arr) {
+    free(arr);
+}
 
 int main(){
     int size = 0;   //definition size
@@ -270,6 +271,14 @@ int main(){
     if (myArray != NULL) {
         printf("Array allocated successfully.\n");
     }
+freeArray(myArray);
+
+      
+        myArray = NULL; 
+        printf("Array freed and pointer set to NULL.\n");
+
+    
+
 
     insertAt(myArray, &size, 0, 5);//insert 5 in position 0
     insertAt(myArray, &size, 1, 2);//insert 5 in position 0
@@ -287,5 +296,5 @@ int main(){
     
     
     return 0;
-}
 
+}
