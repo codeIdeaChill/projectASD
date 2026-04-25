@@ -264,7 +264,7 @@ int main(){
     
    
 
-   ;
+   
     mergeSort(arr,0,size - 1);
     printf("the value in %d position \n", binarySearch(arr, size, 1)); 
     printf("the sum of array: %d \n", sumArray(arr, size)); 
