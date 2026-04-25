@@ -258,38 +258,17 @@ int main(){
     // displaying the min
     printf("the min is %d\n", finale_Min);
 
-<<<<<<< HEAD
-=======
-    int capacity = 5;
-
-    
-    int* myArray = createDynamicArray(capacity);
-
-    // ا
-    if (myArray != NULL) {
-        printf("Array allocated successfully.\n");
-    }
-freeArray(myArray);
-
-      
-        myArray = NULL; 
-        printf("Array freed and pointer set to NULL.\n");
 
     
 
+    
+   
 
-    insertAt(myArray, &size, 0, 5);//insert 5 in position 0
-    insertAt(myArray, &size, 1, 2);//insert 5 in position 0
-    insertAt(myArray, &size, 2, 4);//insert 5 in position 0
-    insertAt(myArray, &size, 3, 7);//insert 5 in position 0
-    insertAt(myArray, &size, 4, 8);//insert 5 in position 0
-    //bubbleSort(arr, size);// this func for sort the array
-    //insertionSort(arr,size);
->>>>>>> 4efe0c8e44f3b4dc3ab462db6273c3214f9f3b42
+   ;
     mergeSort(arr,0,size - 1);
     printf("the value in %d position \n", binarySearch(arr, size, 1)); 
     printf("the sum of array: %d \n", sumArray(arr, size)); 
-    int capacity = 0; 
+    int capacity=0;
     int* array = createDynamicArray(capacity);
     insertAt(array, &capacity, 0, 1);//insert 1 in position 3 
     insertAt(array, &capacity, 1, 5);//insert 1 in position 3 
