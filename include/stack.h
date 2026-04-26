@@ -9,3 +9,6 @@ int pop(Stack* S);
 int peek(Stack* S);
 int isEmpty(Stack* S);
 
+
+
+
