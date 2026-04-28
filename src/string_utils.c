@@ -32,6 +32,22 @@ char* my_strncpy(char* dest,const char* src,int n){
 }
 
 
+char* my_strcat(char* dest,const char* src){
+    int i=0;
+    int j=0;
+    while(dest[i] !='\0'){
+        i++;
+    }
+    while(src[j] !='\0'){
+        dest[i] =src[j];
+        i++;
+        j++;
+    }
+    dest[i]='\0';
+    return dest;
+}
+
+
 
 int main(){
     int x = my_strlen("spider man");
@@ -39,13 +55,19 @@ int main(){
 
 
     char dest[40];
-    printf("%s\n",my_strcpy(dest,"hello world"));
+    my_strcpy(dest,"hello world");
+    printf("%s\n",dest);
 
-    
-    my_strncpy(dest,"hello again",8);
+    //the same vqriable 'dest' above..
+    my_strncpy(dest,"hello again", 8 );
     dest[8]='\0';
     printf("%s\n",dest);
 
+
     
+    char str[40]="lengends never";
+    my_strcat(str," die");
+    printf("%s\n", str);
+
     return 0;
 }
