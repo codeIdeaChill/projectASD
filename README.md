@@ -23,6 +23,7 @@ freearray()
 ```
 initMatrix
 print Matrix
+//addMatrices
 ```
 
 
