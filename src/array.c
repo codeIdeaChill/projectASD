@@ -236,26 +236,8 @@ int* freeArray(int* arr) {
     free(arr);
     return NULL;
 
-    //init MATRIX
-#include<stdio.h>
-int max_rows,max_cols;
-void initMatrix(int m[max_rows][max_cols], int* rows, int* cols){
-    printf("enter max rows\n");
-    scanf("%d",&max_rows);
-    printf("enter max cols\n");
-    scanf("%d",&max_cols);
-    if(*rows>max_rows || *cols>max_cols){
-        printf("error");
-    }
-    for(int i=0;i<*rows;i++){
-        for(int j=0;j<*cols;j++){
-            printf("enter [i][j]");
-            scanf("%d",&m[i][j]);
-        }
-    }
 
-}
-}
+
 
 // print Matrix
 void printMatrix(int m[max_rows][max_cols], int rows, int cols){
