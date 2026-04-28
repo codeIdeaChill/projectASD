@@ -21,13 +21,15 @@ char* my_strcpy(char* dest ,const char* src){
 
 
 char* my_strncpy(char* dest,const char* src,int n){
-    for(int i=0 ;i<n ;i++){
+    int i=0; 
+    for(i = 0; i < n; i++){
         if(src[i] !='\0'){
             dest[i]=src[i];
         }else{
             dest[i]='\0';
         }
     }
+    dest[i]='\0';
     return dest;
 }
 
@@ -58,14 +60,13 @@ int main(){
     my_strcpy(dest,"hello world");
     printf("%s\n",dest);
 
-    //the same vqriable 'dest' above..
+    //the same variable 'dest' above..
     my_strncpy(dest,"hello again", 8 );
-    dest[8]='\0';
     printf("%s\n",dest);
 
 
     
-    char str[40]="lengends never";
+    char str[40]="legends never";
     my_strcat(str," die");
     printf("%s\n", str);
 
