@@ -22,6 +22,7 @@ freearray()
 ## hachichi
 ```
 initMatrix
+print Matrix
 ```
 
 
