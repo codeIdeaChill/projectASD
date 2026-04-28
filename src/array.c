@@ -258,7 +258,14 @@ void initMatrix(int m[max_rows][max_cols], int* rows, int* cols){
 }
 }
 
-
+// print Matrix
+void printMatrix(int m[max_rows][max_cols], int rows, int cols){
+    for(int i=0;i<rows;i++){
+        for(int j=0;j<cols;j++){
+            printf("%4d",m[i][j]);
+        }
+    }
+}
 
 //addMatrices
 void addMatrices(int a[][], int b[][], int r[][], int rows, int cols){
