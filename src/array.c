@@ -275,6 +275,17 @@ void addMatrices(int a[][], int b[][], int r[][], int rows, int cols){
     }
 }
 
+//multiplyMatrices
+void multiplyMatrices(int a[][], int b[][], int r[][], int n){
+    for(int i=0;i<n;i++){
+        for(int j =0;j<n;j++){
+            r[i][j]==0;
+            for(int k=0;k<n;k++){
+                r[i][j]+1=a[j][k]*b[k][j];
+            }
+        }
+    }
+}
 
 int main(){
     int size;   //definition size
