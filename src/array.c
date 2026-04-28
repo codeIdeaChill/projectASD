@@ -288,6 +288,15 @@ void multiplyMatrices(int a[][], int b[][], int r[][], int n){
     }
 }
 
+//transposeMatrix
+void transposeMatrix(int m[][MAX_COLS], int rows, int cols, int out[][MAX_COLS]){
+    for(int i=0;i<rows;i++){
+        for(int j=0;j<cols;j++){
+            out[i][j]=m[i][j]
+        }
+    }
+}
+
 int main(){
     int size;   //definition size
     int arr[MAX_1D];//difinition of array

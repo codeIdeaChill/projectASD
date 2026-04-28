@@ -25,6 +25,7 @@ initMatrix
 print Matrix
 addMatrices
 multiplyMatrices
+transposeMatrix
 ```
 
 
