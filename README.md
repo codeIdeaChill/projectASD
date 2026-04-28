@@ -21,7 +21,7 @@ freearray()
 
 ## hachichi
 ```
-nothing yet
+initMatrix
 ```
 
 
