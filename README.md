@@ -28,6 +28,7 @@ nothing yet
 ## ayoub
 ```
 my_strlen
+my_strcpy
 ```
 
 ## nina
