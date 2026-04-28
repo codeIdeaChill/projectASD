@@ -29,6 +29,7 @@ nothing yet
 ```
 my_strlen
 my_strcpy
+my_strncpy
 ```
 
 ## nina
