@@ -39,11 +39,11 @@ char* my_strcat(char* dest,const char* src){
         i++;
     }
     while(src[j] !='\0'){
-        dest[i] =src[j];
+        dest[i] = src[j];
         i++;
         j++;
     }
-    dest[i]='\0';
+    dest[i] = '\0';
     return dest;
 }
 
@@ -64,7 +64,7 @@ int main(){
     printf("%s\n",dest);
 
 
-    
+
     char str[40]="lengends never";
     my_strcat(str," die");
     printf("%s\n", str);
