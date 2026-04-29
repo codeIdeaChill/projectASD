@@ -21,7 +21,11 @@ freearray()
 
 ## hachichi
 ```
-nothing yet
+initMatrix
+print Matrix
+addMatrices
+multiplyMatrices
+transposeMatrix
 ```
 
 
