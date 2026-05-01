@@ -65,13 +65,8 @@ int main(){
     printf("%s\n",dest);
 
 
-<<<<<<< HEAD
 
     char str[40]="lengends never";
-=======
-    
-    char str[40]="legends never";
->>>>>>> fe62827dcd29a10c2259bf79071957d9e4821c50
     my_strcat(str," die");
     printf("%s\n", str);
 
