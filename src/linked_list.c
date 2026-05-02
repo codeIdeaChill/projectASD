@@ -1,9 +1,5 @@
 #include "../include/linked_list.h"
 
-
-//WARNNING
-//don't touch my pain please go ahead from here
-
 // signly liked list
 
 Node* initList(Node* list){
@@ -148,7 +144,7 @@ Node* reverseList(Node* list){
     return head;
 }
 
-void swap(int* x, int* y){
+void swaplist(int* x, int* y){
     int temp = *x;
     *x = *y;
     *y = temp; 
@@ -172,7 +168,7 @@ void sortListBubble(Node* list){
     while(head != NULL){
         while(head->next != NULL){
             if(head->data > head->next->data){
-                swap(&head->data, &head->next->data);
+                swaplist(&head->data, &head->next->data);
             }
             head = head->next;
         }
@@ -310,28 +306,4 @@ void displayList(Node* list){
         head = head->next;
     } 
     printf("\n");
-}
-
-
-
-int main(){
-    Node* list = initList(list);
-    list = insertEnd(list, 4);
-    list = insertEnd(list, 6);
-    list = insertEnd(list, 2);
-    list = insertEnd(list, 3);
-    list = deleteBeginning(list);
-    displayList(list); 
-
-    //douvly linked list 
-    DNode* head;
-    initListDLL(&head);
-    insertEndDLL(head, 2);
-    insertEndDLL(head, 1);
-    insertBeginningDLL(&head, 3);
-    insertBeginningDLL(&head, 5);
-    displayForward(head);
-    deleteByValueDLL(&head, 0);
-    displayBackward(head);
-    return 0;
 }
