@@ -29,6 +29,7 @@ ads2_project/
 !stack.h
 !string_utils.h
 !common.h
+!Makefile
 
 # Allow entire folders (example)
 !src/

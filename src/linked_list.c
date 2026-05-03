@@ -1,9 +1,5 @@
 #include "../include/linked_list.h"
 
-
-//WARNNING
-//don't touch my pain please go ahead from here
-
 // signly liked list
 
 Node* initList(Node* list){
@@ -148,7 +144,7 @@ Node* reverseList(Node* list){
     return head;
 }
 
-void swap(int* x, int* y){
+void swaplist(int* x, int* y){
     int temp = *x;
     *x = *y;
     *y = temp; 
@@ -172,7 +168,7 @@ void sortListBubble(Node* list){
     while(head != NULL){
         while(head->next != NULL){
             if(head->data > head->next->data){
-                swap(&head->data, &head->next->data);
+                swaplist(&head->data, &head->next->data);
             }
             head = head->next;
         }
@@ -206,13 +202,98 @@ Node* mergeSortedLists(Node* a, Node* b, Node* list){
 
 //doubly linked list
 
-void initListDLL(DLL* list){
-    list->head = list->tail = NULL
-    list->size = 0;
+void initListDLL(DNode** list){
+    (*list) = (DNode*)malloc(sizeof(DNode));
+    (*list)->next = (*list)->prev = NULL;
+    (*list)->data = 0;
 }
 
-int insertBeginningDLL(DLL* list, int value){
-   // i'am tiered for complete it :(  
+int insertBeginningDLL(DNode** list, int value){
+    DNode* new = (DNode*)malloc(sizeof(DNode));
+    new->data = value;
+    (*list)->prev = new;
+    new->next = *list;
+    new->prev = NULL;
+    *list = new;
+}
+
+int insertEndDLL(DNode* list, int value){
+    DNode* new = (DNode*)malloc(sizeof(DNode));
+    if(!new)return -1;
+    new->data = value;
+    new->next = NULL;
+    DNode* tail = list;
+    DNode* temp = tail;
+    while(tail != NULL){
+        temp = tail;
+        tail = tail->next;
+    }
+    new->prev = temp;
+    temp->next = new;
+}
+
+void displayForward(DNode* list){
+    if(list == NULL){
+        printf("list is empty! \n");
+        return;
+    }
+    DNode* head = list;
+    printf("null");
+    while(head != NULL){
+        printf("<- [%d] ->", head->data);
+        head = head->next;
+    }
+    printf("null\n");
+
+}
+
+int deleteByValueDLL(DNode** list, int value){
+    if((*list) == NULL){
+        printf("list is empty! \n");
+        return -1;
+    }
+    DNode* head = *list;
+    while(head->data != value){
+        head = head->next;
+        if(head == NULL){
+            printf("the value does not exist! \n");
+            return -1;
+        }
+    }
+    if(head == *list){
+        head->next->prev = NULL;
+        *list = head->next;
+        free(head);
+        return 0;
+    }
+    if(head->next == NULL){
+        head->prev->next = NULL;
+        free(head);
+        return 0;
+    }
+    head->prev->next = head->next;
+    head->next->prev = head->prev;
+    
+    free(head);
+    return 0;
+
+}
+
+void displayBackward(DNode* list){
+    if(list == NULL){
+        printf("list is empty! \n");
+        return;
+    }
+    DNode* tail = list;
+    while(tail->next != NULL){
+        tail = tail->next;
+    }
+    printf("null");
+    while(tail != NULL){
+        printf("<- [%d] ->", tail->data);
+        tail = tail->prev;
+    }
+    printf("null\n");
 }
 
 
@@ -225,48 +306,4 @@ void displayList(Node* list){
         head = head->next;
     } 
     printf("\n");
-}
-
-
-
-int main(){
-    Node* list = initList(list);
-    list = insertEnd(list, 4);
-    list = insertEnd(list, 6);
-    list = insertEnd(list, 2);
-    list = insertEnd(list, 3);
-    list = deleteBeginning(list);
-    displayList(list); 
-    
-    Node* test = initList(test);
-    test = insertEnd(test, 10);
-    test = insertEnd(test, 8);
-    test = insertEnd(test, 7);
-    test = insertEnd(test, 1);
-    test = deleteBeginning(test);
-    displayList(test); 
-    /*
-    AddEnd output:       4 -> 6 -> 2 -> 3 -> NULL
-    AddBegining output:  3 -> 2 -> 6 -> 4 -> NULL
-    */
-
-    sortListBubble(list);
-    sortListBubble(test);
-
-    displayList(list); 
-    displayList(test); 
-
-    Node* result = initList(result);
-    result = mergeSortedLists(list, test, result);
-    displayList(result); 
-
-
-    Node* find = searchValue(list, 5);
-    if(find == NULL){
-        printf("This value does'nt in list !");
-    }else{
-        printf("the value is: %d \n", find->data);
-    }
-
-    return 0;
 }
