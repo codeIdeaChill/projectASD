@@ -39,5 +39,8 @@ my_strcat
 
 ## nina
 ```
-nothing yet
+initQueue
+enqueue
+dequeue
+rear/front
 ```
