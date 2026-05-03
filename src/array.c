@@ -8,6 +8,10 @@ void initArray(int arr[], int* size){
 
 //print array
 void printArray(int arr[], int size){
+    if(arr == NULL){
+        printf("Array is empty! \n");
+        return;
+    }
     printf("[");
     for(int i = 0; i < size; ++i){
         printf("%d", arr[i]);
@@ -21,8 +25,7 @@ int insertAt(int arr[], int *size, int index, int value){
     //check for errors
     if(index < 0 || index > *size)return -1;
     if(*size >= MAX_1D)return -1;
-
-//this for loop for shift all element after the index to right and put the volue in the index position
+    //this for loop for shift all element after the index to right and put the volue in the index position
     for(int i = *size; i > index; i--)arr[i] = arr[i - 1];
 
     arr[index] = value;
@@ -106,23 +109,19 @@ void insertionSort(int arr[], int size){
 }
 
 
-void merge(int arr[], int l, int m, int r){
+void merge(int arr[], int left, int mid, int right){
 
-    int n1 = m - l + 1;
-    int n2 = r - m;
-    
+    int n1 = mid - left + 1;
+    int n2 = right - mid; 
     int L[n1], R[n2];
 
     for (int i = 0; i < n1; ++i){
-        L[i] = arr[l + i];
+        L[i] = arr[left + i];
     }
     for (int j = 0; j < n2; ++j){
-        R[j] = arr[m + 1 +j];
+        R[j] = arr[mid + 1 +j];
     }
-
-
-    int i =0, j=0, k =l;
-
+    int i = 0, j = 0, k = left;
     while(i < n1 && j < n2){
         if(L[i] <= R[j]){
             arr[k] = L[i];
@@ -182,21 +181,17 @@ int binarySearch(int arr[], int size, int value){
 int sumArray(int arr[], int size) {
 
     if(arr == NULL || size == 0){   //you should check if size == 0 
-                                    //not size <= 0
         return 0;
     }
     int sum=0;
-    for(int i=1;i<size;i++){
-        sum=sum+arr[i];
+    for(int i = 0;i < size; i++){
+        sum = sum + arr[i];
     }
     return sum;
 }
 //array average
 double averageArray(int arr[], int size){
-    if (size==0){
-        return 0;
-
-    }
+    if (size == 0)return 0;
     int sum = sumArray(arr, size);
     return (double)sum / (double)size;
 }
@@ -222,53 +217,144 @@ int findMin(int arr[], int size) {
     
     return Min;
 }
+// create a daynmaique array
+int* createDynamicArray(int capacity) {
+
+    int* arr = malloc(capacity * sizeof(int));
+
+    // check for observing space 
+    if (arr == NULL) {
+        printf("Error: Memory allocation failed!\n");
+        return NULL;
+    }
+
+    return arr;
+}
+
+int* freeArray(int* arr) {
+    free(arr);
+    return NULL;
+
+}
 
 
+//init MATRIX
+void initMatrix(int m[][MAX_COLS], int* rows, int* cols){
+    if(*rows > MAX_ROWS || *cols > MAX_COLS){
+        printf("error");
+    }
+    for(int i=0;i<*rows;i++){
+        for(int j=0;j<*cols;j++){
+            printf("enter [%d][%d]: ", i, j);
+            scanf("%d",&m[i][j]);
+        }
+    }
+
+}
 
 
+// print Matrix
+void printMatrix(int m[][MAX_COLS], int rows, int cols){
+    for(int i=0;i<rows;i++){
+        for(int j=0;j<cols;j++){
+            printf("%4d",m[i][j]);
+        }
+        printf("\n");
+    }
+}
+
+//addMatrices
+void addMatrices(int a[][MAX_COLS], int b[][MAX_COLS], int r[][MAX_COLS], int rows, int cols){
+    for(int i=0;i<rows;i++){
+        for(int j=0;j<cols;j++){
+            r[i][j]=a[i][j]+b[i][j];
+        }
+    }
+}
+
+//multiplyMatrices
+void multiplyMatrices(int a[][MAX_COLS], int b[][MAX_COLS], int r[][MAX_COLS], int n){
+    for(int i=0;i<n;i++){
+        for(int j =0;j<n;j++){
+            r[i][j] = 0;
+            for(int k=0;k<n;k++){
+                r[i][j] += a[j][k]*b[k][j];
+            }
+        }
+    }
+}
+
+//transposeMatrix
+void transposeMatrix(int m[][MAX_COLS], int rows, int cols, int out[][MAX_COLS]){
+    for(int i=0;i<rows;i++){
+        for(int j=0;j<cols;j++){
+            out[i][j] = m[j][i];
+        }
+    }
+}
 
 int main(){
-    int size = 0;   //definition size
+    int size;   //definition size
     int arr[MAX_1D];//difinition of array
 
     // initialization the array with size = 0
     initArray(arr, &size);
 
-
     insertAt(arr, &size, 0, 5);//insert 5 in position 0
     insertAt(arr, &size, 1, 3);//insert 3 in position 1
     insertAt(arr, &size, 2, 4);//insert 4 in position 2 
     insertAt(arr, &size, 3, 1);//insert 1 in position 3 
+    
+    printArray(arr, size);
     // 1. calling the function
     double avg = averageArray(arr, size);
-
     // 2. displaying avg
-    printf("the average of array is %f\n", avg);
+    printf("the average of array is %lf\n", avg);
     
-    
-    int finale_Max; 
-    finale_Max = findMax(arr, size);// calling the function find max
-    
+    int finale_Max = findMax(arr, size);    
     // displaying the max
     printf("the max is %d\n", finale_Max);
-    int finale_Min; 
-    finale_Min = findMin(arr, size);// calling the function find min
-    
+
+    int finale_Min = findMin(arr, size);
     // displaying the min
     printf("the min is %d\n", finale_Min);
-    
 
-
-    //bubbleSort(arr, size);// this func for sort the array
-    //insertionSort(arr,size);
     mergeSort(arr,0,size - 1);
-    printArray(arr, size);// to print the array
-
     printf("the value in %d position \n", binarySearch(arr, size, 1)); 
-    printf("the sum of array %d \n", sumArray(arr, size)); 
-    
-    
-    
-    return 0;
-}
+    printf("the sum of array: %d \n", sumArray(arr, size)); 
 
+    //dynamic array here |
+
+    int capacity = 0; 
+    int* array = createDynamicArray(capacity);
+    insertAt(array, &capacity, 0, 1);
+    insertAt(array, &capacity, 1, 5);
+    insertAt(array, &capacity, 2, 2);
+    insertAt(array, &capacity, 3, 3);
+    printArray(array, capacity);
+    
+    array = freeArray(array);
+    if(array == NULL)printf("Array freed and pointer set to NULL.\n");
+    printArray(array, capacity);
+
+
+    /// matrics :
+
+
+    int mat[MAX_ROWS][MAX_COLS];
+    int mat2[MAX_ROWS][MAX_COLS];
+    int result[MAX_ROWS][MAX_COLS];
+    int rows = 2;
+    int col = 2;
+    initMatrix(mat, &rows, &col);
+    initMatrix(mat2, &rows, &col);
+    printMatrix(mat, rows, col);
+    printMatrix(mat2, rows, col);
+    multiplyMatrices(mat, mat2, result, rows);
+    printMatrix(result, rows, col);
+
+
+
+    return 0;
+
+}

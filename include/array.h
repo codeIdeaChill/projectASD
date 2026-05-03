@@ -19,3 +19,17 @@ int linearSearch(int arr[], int size, int value);
 //sorting functions
 void bubbleSort(int arr[], int size);
 void selectionSort(int arr[], int size);
+void mergeSort(int arr[], int left, int right);
+void insertionSort(int arr[], int size);
+
+
+
+
+int findMin(int arr[], int size);
+int findMax(int arr[], int size);
+double averageArray(int arr[], int size);
+int sumArray(int arr[], int size);
+
+
+
+

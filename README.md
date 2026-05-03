@@ -5,7 +5,8 @@
 initArray, printArray, insertAt, deleteAt, linearSearch, swap
 bubbleSort, minPos, selectionSort, insertionSort,merge, mergeSort
 binarySearch, initList, createnewNode, insertBeginning, insertEnd
-insertAtPosition, displayList
+insertAtPosition, displayList, deleteBeginning, deleteEnd, deleteByValue
+sortListBubble, reverseList, searchValue, sortListBubble, mergeSortedLists
 
 ```
 
@@ -20,13 +21,20 @@ freearray()
 
 ## hachichi
 ```
-nothing yet
+initMatrix
+print Matrix
+addMatrices
+multiplyMatrices
+transposeMatrix
 ```
 
 
 ## ayoub
 ```
-nothing yet
+my_strlen
+my_strcpy
+my_strncpy
+my_strcat
 ```
 
 ## nina
