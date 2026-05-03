@@ -8,6 +8,8 @@ typedef struct
     char category[20];
 } Record;
 
+
+
 int createBinaryFile(const char *filename)
 {
     FILE *file = fopen(filename, "wb");
