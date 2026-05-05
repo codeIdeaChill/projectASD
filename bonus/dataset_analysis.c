@@ -41,6 +41,10 @@ void createBinarfile(const char* filename, Record* r, size_t count){
     fclose(f);
 }
 
+void sortDatasetByField(Record arr[], int count, char* field){
+    
+}
+
 int main(){
 
     Record temp[] = {{0, "professor", 10, "teacher"},{1, "adem", 15.9, "student"},{2, "mokrani", 24.3, "school"}};

@@ -231,13 +231,13 @@ int* createDynamicArray(int capacity) {
     return arr;
 }
 //fillArray
-void fillArray(int* arr, int size){
-    printf("enter size");
-    scanf("%d",&size);
-    if(size <0){
+void fillArray(int* arr, int* size){
+    printf("enter size: ");
+    scanf("%d", size);
+    if(size < 0){
         printf("error");
     }
-    for(int i =0;i<size;i++){
+    for(int i = 0; i < *size; i++){
         printf("arr[%d]",i);
         scanf("%d",&arr[i]);
     }
@@ -357,10 +357,9 @@ int main(){
 
     int capacity = 0; 
     int* array = createDynamicArray(capacity);
-    insertAt(array, &capacity, 0, 1);
-    insertAt(array, &capacity, 1, 5);
-    insertAt(array, &capacity, 2, 2);
-    insertAt(array, &capacity, 3, 3);
+    fillArray(array, &capacity);
+    printArray(array, capacity);
+    resizeArray(array, 8);
     printArray(array, capacity);
     
     array = freeArray(array);
