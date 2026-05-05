@@ -49,6 +49,10 @@ findmin(),1
 creat free array1
 freearray()1
 Symetric matrix
+reverseString
+countVowels
+countConsonants
+countWords
 
 ## hachichi
 ```
@@ -59,7 +63,8 @@ multiplyMatrices
 transposeMatrix
 fillArray.
 resizeArray
-```
+reverseString
+
 
 
 ## ayoub
