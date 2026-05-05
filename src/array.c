@@ -230,6 +230,19 @@ int* createDynamicArray(int capacity) {
 
     return arr;
 }
+//fillArray
+void fillArray(int* arr, int size){
+    printf("enter size");
+    scanf("%d",&size);
+    if(size <0){
+        printf("error");
+    }
+    for(int i =0;i<size;i++){
+        printf("arr[%d]",i);
+        scanf("%d",&arr[i]);
+    }
+}
+
 
 int* freeArray(int* arr) {
     free(arr);
