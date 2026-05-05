@@ -3,27 +3,28 @@
 # the scheme of project 
 ```
 /
-|_bonus
-    |_dataset_analysis.c
-|_docs
-    |_problem_solving.md
-|_include
-    |_common.h
-    |_array.h
-    |_linked_list.h
-    |_stack.h
-    |_queue.h
-    |_file_utils.h
-    |_string_utils.h
-|_src
-    |_array.c
-    |_linked_list.c
-    |_stack.c
-    |_queue.c
-    |_file_utils.c
-    |_string_utils.c
-|_demo.c
+|_ bonus
+|   |_dataset_analysis.c
+|_ docs
+|   |_problem_solving.md
+|_ include
+|   |_common.h
+|   |_array.h
+|   |_linked_list.h
+|   |_stack.h
+|   |_queue.h
+|   |_file_utils.h
+|   |_string_utils.h
+|_ src
+|   |_array.c
+|   |_linked_list.c
+|   |_stack.c
+|   |_queue.c
+|   |_file_utils.c
+|   |_string_utils.c
+|_ demo.c
 |_ REDME.md
+|_ Makefile
 ```
 
 
