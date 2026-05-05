@@ -48,7 +48,7 @@ findmax(),1
 findmin(),1
 creat free array1
 freearray()1
-```
+Symetric matrix
 
 ## hachichi
 ```

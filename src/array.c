@@ -320,6 +320,15 @@ void transposeMatrix(int m[][MAX_COLS], int rows, int cols, int out[][MAX_COLS])
         }
     }
 }
+ //isSymmetric 
+int isSymmetric(int m[][MAX_COLS], int n){
+    for(int i = 0; i < n; i++)
+        for(int j = i + 1; j < n; j++)
+            if(m[i][j] != m[j][i])
+                return 0;
+    return 1;
+}
+
 
 
 
@@ -381,6 +390,11 @@ int main(){
     printMatrix(mat2, rows, col);
     multiplyMatrices(mat, mat2, result, rows);
     printMatrix(result, rows, col);
+    //isSymmetric
+    if(isSymmetric(mat, rows))
+        printf("mat is Symmetric\n");
+    else
+        printf("mat is Not Symmetric\n");
 
 
 
