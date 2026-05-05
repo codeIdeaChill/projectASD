@@ -1,5 +1,6 @@
 #include <stdio.h>
-
+#include <string.h>
+#include <ctype.h> 
 int my_strlen(const char* s){
     int i=0;
     while(s[i]!='\0'){
@@ -87,7 +88,40 @@ void toLowerCase(char* s){
         s++;
     }
 }
+// reverseString
+void reverseString(char* s){
+    int i = 0, j = strlen(s) - 1;
+    while(i < j){
+        char temp = s[i];
+        s[i] = s[j];
+        s[j] = temp;
+        i++;
+        j--;
+    }
+}
 
+// countVowels
+int countVowels(const char* s){
+    int count = 0;
+    for(int i = 0; s[i] != '\0'; i++){
+        char c = tolower(s[i]);
+        if(c=='a' || c=='e' || c=='i' || c=='o' || c=='u')
+            count++;
+    }
+    return count;
+}
+// countConsonants
+int countConsonants(const char* s){
+    int count = 0;
+    for(int i = 0; s[i] != '\0'; i++){
+        char c = tolower(s[i]);
+        if(isalpha(c)){
+            if(c!='a' && c!='e' && c!='i' && c!='o' && c!='u')
+                count++;
+        }
+    }
+    return count;
+}
 
 int main(){
 
@@ -126,7 +160,16 @@ int main(){
     printf("%s----> ",word);
     toLowerCase(word);
     printf("%s\n",word);
+    //reserve and count vowel and constant
+    char s[] = "Legends";
 
+    reverseString(s);
+    printf("%s\n", s);   //sdnegeL
+
+    printf("Vowels: %d\n", countVowels(s));    
+    printf("Consonants: %d\n", countConsonants(s)) ;
+
+    
 
     
     return 0;
