@@ -1,7 +1,4 @@
 #include <stdio.h>
-<<<<<<< HEAD
-#include <ctype.h>
-=======
 
 int my_strlen(const char* s){
     int i=0;
@@ -53,9 +50,47 @@ char* my_strcat(char* dest,const char* src){
 }
 
 
+int my_strcmp(const char* a,const char* b){
+    int i=0;
+    while(a[i] !='\0'&& b[i] !='\0' && a[i]==b[i]){
+        i++;
+    }
+    return a[i]-b[i];
+}
 
->>>>>>> cfc4b4175ab9fd1af6982c71045bf3de0b39b48d
+
+int my_strncmp(const char* a,const char* b,int n){
+    int i=0;
+    while( i<n && a[i] !='\0'&& b[i] !='\0' && a[i]==b[i]){
+        i++;
+    }
+    if(i==n){return 0;}
+    return a[i]-b[i];
+}
+
+
+void toUpperCase(char* s){
+    while(*s !='\0'){
+        if(*s >= 'a'&& *s <= 'z'){
+            *s=*s-32;
+        }
+        s++;
+    }
+}
+
+
+void toLowerCase(char* s){
+    while(*s !='\0'){
+        if(*s >= 'A'&& *s <= 'Z'){
+            *s=*s+32;
+        }
+        s++;
+    }
+}
+
+
 int main(){
+
     int x = my_strlen("spider man");
     printf("the size is :%d\n",x);
 
@@ -74,5 +109,25 @@ int main(){
     my_strcat(str," die");
     printf("%s\n", str);
 
+    
+    printf("%d\n",my_strcmp("ronaldo","ronaldinho"));
+
+
+    printf("%d\n",my_strncmp("neymar","neymar jr",6));
+
+
+    char WORD[]="Hello World";
+    printf("%s----> ",WORD);
+    toUpperCase(WORD);
+    printf("%s\n",WORD);
+
+
+    char word[]="Hello World";
+    printf("%s----> ",word);
+    toLowerCase(word);
+    printf("%s\n",word);
+
+
+    
     return 0;
 }
