@@ -25,8 +25,7 @@ int insertAt(int arr[], int *size, int index, int value){
     //check for errors
     if(index < 0 || index > *size)return -1;
     if(*size >= MAX_1D)return -1;
-
-//this for loop for shift all element after the index to right and put the volue in the index position
+    //this for loop for shift all element after the index to right and put the volue in the index position
     for(int i = *size; i > index; i--)arr[i] = arr[i - 1];
 
     arr[index] = value;
@@ -231,10 +230,84 @@ int* createDynamicArray(int capacity) {
 
     return arr;
 }
+//fillArray
+void fillArray(int* arr, int size){
+    printf("enter size");
+    scanf("%d",&size);
+    if(size <0){
+        printf("error");
+    }
+    for(int i =0;i<size;i++){
+        printf("arr[%d]",i);
+        scanf("%d",&arr[i]);
+    }
+}
+
 
 int* freeArray(int* arr) {
     free(arr);
     return NULL;
+
+}
+
+
+//init MATRIX
+void initMatrix(int m[][MAX_COLS], int* rows, int* cols){
+    if(*rows > MAX_ROWS || *cols > MAX_COLS){
+        printf("error");
+    }
+    for(int i=0;i<*rows;i++){
+        for(int j=0;j<*cols;j++){
+            printf("enter [%d][%d]: ", i, j);
+            scanf("%d",&m[i][j]);
+        }
+    }
+
+}
+
+
+// print Matrix
+void printMatrix(int m[][MAX_COLS], int rows, int cols){
+    for(int i=0;i<rows;i++){
+        for(int j=0;j<cols;j++){
+            printf("%4d",m[i][j]);
+        }
+        printf("\n");
+    }
+}
+
+//addMatrices
+void addMatrices(int a[][MAX_COLS], int b[][MAX_COLS], int r[][MAX_COLS], int rows, int cols){
+    for(int i=0;i<rows;i++){
+        for(int j=0;j<cols;j++){
+            r[i][j]=a[i][j]+b[i][j];
+        }
+    }
+}
+
+//multiplyMatrices
+void multiplyMatrices(int a[][MAX_COLS], int b[][MAX_COLS], int r[][MAX_COLS], int n){
+    for(int i = 0;i < n; ++i){
+        for(int j = 0; j < n; ++j){
+            r[i][j] = 0;
+        }
+    }
+    for(int i = 0; i < n; i++){
+        for(int j = 0; j < n; j++){
+            for(int k = 0; k < n; k++){
+                r[i][j] += a[j][k]*b[k][j];
+            }
+        }
+    }
+}
+
+//transposeMatrix
+void transposeMatrix(int m[][MAX_COLS], int rows, int cols, int out[][MAX_COLS]){
+    for(int i=0;i<rows;i++){
+        for(int j=0;j<cols;j++){
+            out[i][j] = m[j][i];
+        }
+    }
 }
 
 
@@ -282,6 +355,25 @@ int main(){
     array = freeArray(array);
     if(array == NULL)printf("Array freed and pointer set to NULL.\n");
     printArray(array, capacity);
+
+
+    /// matrics :
+
+
+    int mat[MAX_ROWS][MAX_COLS];
+    int mat2[MAX_ROWS][MAX_COLS];
+    int result[MAX_ROWS][MAX_COLS];
+    int rows = 2;
+    int col = 2;
+    initMatrix(mat, &rows, &col);
+    initMatrix(mat2, &rows, &col);
+    printMatrix(mat, rows, col);
+    printMatrix(mat2, rows, col);
+    multiplyMatrices(mat, mat2, result, rows);
+    printMatrix(result, rows, col);
+
+
+
     return 0;
 
 }

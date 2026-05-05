@@ -35,14 +35,3 @@ int peek(Stack* S){
 int isEmpty(Stack* S){
     return S->top == NULL;
 }
-
-int main(){
-
-    Stack* stack = initStack(stack);
-    push(stack, 5);
-    push(stack, 4);
-    printf("is empty : %d \n", isEmpty(stack));
-    peek(stack);
-
-    return 0;
-}

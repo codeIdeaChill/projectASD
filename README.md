@@ -1,13 +1,43 @@
 # projectASD
 
+# the scheme of project 
+```
+/
+|_ bonus
+|   |_dataset_analysis.c
+|_ docs
+|   |_problem_solving.md
+|_ include
+|   |_common.h
+|   |_array.h
+|   |_linked_list.h
+|   |_stack.h
+|   |_queue.h
+|   |_file_utils.h
+|   |_string_utils.h
+|_ src
+|   |_array.c
+|   |_linked_list.c
+|   |_stack.c
+|   |_queue.c
+|   |_file_utils.c
+|   |_string_utils.c
+|_ demo.c
+|_ REDME.md
+|_ Makefile
+```
+
+
 ## adem
 ```
 initArray, printArray, insertAt, deleteAt, linearSearch, swap
 bubbleSort, minPos, selectionSort, insertionSort,merge, mergeSort
 binarySearch, initList, createnewNode, insertBeginning, insertEnd
-insertAtPosition, displayList, deleteBeginning, deleteEnd, deleteByValue
-sortListBubble, reverseList, searchValue, sortListBubble, mergeSortedLists
-
+insertAtPosition, displayList, deleteBeginning, deleteEnd
+deleteByValue, sortListBubble, reverseList, searchValue
+sortListBubble, mergeSortedLists
+initStack, push, pop, peek, isEmpty
+initListDLL, insertBeginningDLL, insertEndDLL, displayBackward, displayForward, deleteByValueDLL
 ```
 
 ## menouar
@@ -22,16 +52,31 @@ freearray()1
 
 ## hachichi
 ```
-nothing yet
+initMatrix
+print Matrix
+addMatrices
+multiplyMatrices
+transposeMatrix
+fillArray
 ```
 
 
 ## ayoub
 ```
-nothing yet
+my_strlen
+my_strcpy
+my_strncpy
+my_strcat
+my_strcmp
+my_strncmp
+toUpperCase
+toLowerCase
 ```
 
 ## nina
 ```
-nothing yet
+initQueue
+enqueue
+dequeue
+rear/front
 ```
