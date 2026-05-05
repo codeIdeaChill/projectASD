@@ -1,4 +1,7 @@
 #include <stdio.h>
+<<<<<<< HEAD
+#include <ctype.h>
+=======
 
 int my_strlen(const char* s){
     int i=0;
@@ -51,6 +54,7 @@ char* my_strcat(char* dest,const char* src){
 
 
 
+>>>>>>> cfc4b4175ab9fd1af6982c71045bf3de0b39b48d
 int main(){
     int x = my_strlen("spider man");
     printf("the size is :%d\n",x);
