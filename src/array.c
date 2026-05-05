@@ -320,6 +320,8 @@ void transposeMatrix(int m[][MAX_COLS], int rows, int cols, int out[][MAX_COLS])
     }
 }
 
+
+
 int main(){
     int size;   //definition size
     int arr[MAX_1D];//difinition of array
