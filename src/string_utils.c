@@ -123,6 +123,20 @@ int countConsonants(const char* s){
     return count;
 }
 
+//count words
+int countWords(const char* s){
+    int count = 0, inWord = 0;
+    for(int i = 0; s[i] != '\0'; i++){
+        if(s[i] != ' ' && !inWord){
+            inWord = 1;
+            count++;
+        } else if(s[i] == ' '){
+            inWord = 0;
+        }
+    }
+    return count;
+}
+
 int main(){
 
     int x = my_strlen("spider man");
@@ -168,6 +182,10 @@ int main(){
 
     printf("Vowels: %d\n", countVowels(s));    
     printf("Consonants: %d\n", countConsonants(s)) ;
+    //count word
+    char s3[] = "Legends never lose";
+    printf("Words: %d\n", countWords(s3));
+
 
     
 
