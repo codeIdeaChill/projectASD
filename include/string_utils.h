@@ -1,4 +1,5 @@
 #include<stdio.h>
+
 //strlen():
 int my_strlen(const char* s);
 //strcpy():

@@ -1,32 +1,17 @@
-#include <stdio.h>
-#include <stdlib.h>
-// a record that represent the elements of the queue
-typedef struct Node {
-    int data;
-    struct Node* next;
-} Node;
-// this record used to follow the front and rear
-typedef struct Queue{
-    // we use node* to follow the elements 
-    Node* front;
-    Node* rear;
-} Queue;
+#include "../include/queue.h"
 
 void initQueue(Queue* Q)
 {
   Q->front = NULL;
   Q->rear = NULL;
+  Q->count = 0;
 }
 
 // to link the new node with the rear and we have the new rear
 int enqueue(Queue* Q, int value)
 {
-    // add an element in the end (rear)
    Node* newNode = (Node*)malloc(sizeof(Node));
-   //to link the newnode with value...
-
    newNode->data = value;
-   // we should put NULL to limit the range of the elements
    newNode->next = NULL;
 
    if (Q->rear == NULL) {
@@ -36,6 +21,7 @@ int enqueue(Queue* Q, int value)
        Q->rear->next = newNode;
        Q->rear = newNode;
    }
+   Q->count++;
    return 0;
 }
 
@@ -45,7 +31,6 @@ int dequeue(Queue* Q)
         printf("Empty Queue\n");
         return -1;
     }
-// we should create the temp to store the head of the queue (front)
     Node* temp = Q->front;
     int value = temp->data;
     Q->front = Q->front->next;
@@ -53,9 +38,9 @@ int dequeue(Queue* Q)
     if (Q->front == NULL) {
         Q->rear = NULL;
     }
-//delete the front by the temp
+
     free(temp);
- // return the value of the deleted element   
+    Q->count--;
     return value;
 }
 
