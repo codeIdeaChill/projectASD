@@ -288,10 +288,14 @@ void addMatrices(int a[][MAX_COLS], int b[][MAX_COLS], int r[][MAX_COLS], int ro
 
 //multiplyMatrices
 void multiplyMatrices(int a[][MAX_COLS], int b[][MAX_COLS], int r[][MAX_COLS], int n){
-    for(int i=0;i<n;i++){
-        for(int j =0;j<n;j++){
+    for(int i = 0;i < n; ++i){
+        for(int j = 0; j < n; ++j){
             r[i][j] = 0;
-            for(int k=0;k<n;k++){
+        }
+    }
+    for(int i = 0; i < n; i++){
+        for(int j = 0; j < n; j++){
+            for(int k = 0; k < n; k++){
                 r[i][j] += a[j][k]*b[k][j];
             }
         }

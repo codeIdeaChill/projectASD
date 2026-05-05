@@ -1,14 +1,4 @@
-#include <stdio.h>
-// create a record to store the data of the students
-typedef struct
-{
-    int id;
-    char name[50];
-    float score;
-    char category[20];
-} Record;
-
-
+#include "../include/file_utils.h"
 
 int createBinaryFile(const char *filename)
 {
@@ -21,11 +11,9 @@ int createBinaryFile(const char *filename)
     return 0;
 }
 
-int 
 
 int main()
 {
-    FILE *students;
     createBinaryFile("students.bin");
 
     return 0;
