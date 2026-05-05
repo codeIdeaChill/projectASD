@@ -55,6 +55,7 @@ print Matrix
 addMatrices
 multiplyMatrices
 transposeMatrix
+fillArray
 ```
 
 
