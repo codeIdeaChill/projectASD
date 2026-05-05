@@ -237,6 +237,8 @@ int* freeArray(int* arr) {
     return NULL;
 }
 
+
+
 int main(){
     int size;   //definition size
     int arr[MAX_1D];//difinition of array
