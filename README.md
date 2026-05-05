@@ -56,6 +56,7 @@ addMatrices
 multiplyMatrices
 transposeMatrix
 fillArray
+resizeArray
 ```
 
 

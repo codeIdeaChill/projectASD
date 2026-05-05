@@ -249,6 +249,16 @@ int* freeArray(int* arr) {
     return NULL;
 
 }
+//resizeArray
+int* resizeArray(int* arr, int newCapacity){
+    int* temp = (int*)realloc(arr, newCapacity * sizeof(int));
+    if(temp==NULL){
+        printf("error");
+        return NULL;
+    }
+  return temp;  
+}
+
 
 
 //init MATRIX
