@@ -230,7 +230,6 @@ int* createDynamicArray(int capacity) {
 
     return arr;
 }
-
 //fillArray
 void fillArray(int* arr, int size){
     printf("enter size");
