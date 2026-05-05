@@ -249,6 +249,7 @@ int* freeArray(int* arr) {
     return NULL;
 
 }
+
 //resizeArray
 int* resizeArray(int* arr, int newCapacity){
     int* temp = (int*)realloc(arr, newCapacity * sizeof(int));

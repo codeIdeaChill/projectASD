@@ -57,7 +57,7 @@ print Matrix
 addMatrices
 multiplyMatrices
 transposeMatrix
-fillArray
+fillArray.
 resizeArray
 ```
 
