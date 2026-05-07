@@ -54,6 +54,7 @@ countVowels
 countConsonants
 countWords
 
+```
 ## hachichi
 ```
 initMatrix
@@ -64,7 +65,7 @@ transposeMatrix
 fillArray.
 resizeArray
 reverseString
-
+```
 
 
 ## ayoub

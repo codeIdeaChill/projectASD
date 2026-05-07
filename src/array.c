@@ -366,7 +366,7 @@ int main(){
 
     int capacity = 0; 
     int* array = createDynamicArray(capacity);
-    fillArray(array, &capacity);
+    //fillArray(array, &capacity);
     printArray(array, capacity);
     resizeArray(array, 8);
     printArray(array, capacity);
@@ -385,11 +385,11 @@ int main(){
     int rows = 2;
     int col = 2;
     initMatrix(mat, &rows, &col);
-    initMatrix(mat2, &rows, &col);
+    //initMatrix(mat2, &rows, &col);
     printMatrix(mat, rows, col);
-    printMatrix(mat2, rows, col);
-    multiplyMatrices(mat, mat2, result, rows);
-    printMatrix(result, rows, col);
+    //printMatrix(mat2, rows, col);
+    //transposeMatrix(mat, rows, col, result);
+    //printMatrix(result, rows, col);
     //isSymmetric
     if(isSymmetric(mat, rows))
         printf("mat is Symmetric\n");
