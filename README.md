@@ -38,7 +38,7 @@ deleteByValue, sortListBubble, reverseList, searchValue
 sortListBubble, mergeSortedLists
 initStack, push, pop, peek, isEmpty
 initListDLL, insertBeginningDLL, insertEndDLL, displayBackward, displayForward, deleteByValueDLL
-
+quickSort
 dataset_analysis
 ```
 
