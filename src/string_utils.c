@@ -135,6 +135,51 @@ int countWords(const char* s){
         }
     }
     return count;
+
+    //isPalindrome
+int isPalindrome(const char* s){
+    int i=0;
+    int j=my_strlen(s);
+    while(i<j){
+        if(s[i]!=s[j]){
+            return 0;
+        }
+        i++;
+        j--;
+    }
+    return 1;
+}
+
+// removeChar
+void removeChar(char* s, char c){
+    int i=0;
+    int j=0;
+    for(i=0;s[i]!=NULL;i++){
+        s[j]=s[i];
+        j++;
+    }
+}
+
+//removeSpaces
+void removeSpaces(char* s){
+    int i=0;
+    int j=0;
+    for(i=0;s[i]!=NULL;i++){
+        if(s[i]!=" " && s[i]!="\t"){
+            s[j]=s[i];
+            j++;
+        }
+    }
+}
+
+//compareIgnoreCase
+int compareIgnoreCase(const char* a, const char* b){
+    int i=0;
+     while(a[i] !='\0'&& b[i] !='\0' && tolower(a[i])==tolower(b[i])){
+        i++;
+    }
+    return tolower(a[i]) - tolower(b[i]);
+}
 }
 
 int main(){
