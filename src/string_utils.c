@@ -220,7 +220,7 @@ int main(){
     toLowerCase(word);
     printf("%s\n",word);
     //reserve and count vowel and constant
-    char s[] = "Legends";
+    char s[] = "bouganoura";
 
     reverseString(s);
     printf("%s\n", s);   //sdnegeL
