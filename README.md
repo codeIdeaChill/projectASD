@@ -67,6 +67,7 @@ reverseString
 countVowels
 countConsonants
 countWords
+bonus products
 
 ```
 ## hachichi
