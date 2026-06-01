@@ -28,6 +28,18 @@
 ```
 
 
+## How it work 
+download it and go inside the main folder and run 
+```
+make
+```
+it will compile all files and link it into one file 
+```
+demo_app
+```
+
+
+
 ## adem
 ```
 initArray, printArray, insertAt, deleteAt, linearSearch, swap
@@ -67,10 +79,10 @@ transposeMatrix
 fillArray.
 resizeArray
 reverseString
-//isPalindrome
-// removeChar
-//removeSpaces
-//compareIgnoreCase
+isPalindrome
+removeChar
+removeSpaces
+compareIgnoreCase
 ```
 
 
