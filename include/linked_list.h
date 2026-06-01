@@ -5,7 +5,7 @@
 //singly linked list
 Node* initList(Node* list);
 Node* createnewNode(int value);
-Node* insertBeginning(Node* list, int value);
+int insertBeginning(Node** list, int value);
 Node* insertEnd(Node* list, int value);
 Node* insertAtPosition(Node* list, int pos, int value);
 Node* deleteEnd(Node* list);

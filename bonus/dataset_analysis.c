@@ -193,7 +193,7 @@ int filterByCondition(Record arr[], int count, float threshold, Record out[]){
     }
     int j = 0;
     for(int i = 0; i < count; i++){
-        if(arr[i].score > threshold){
+        if(arr[i].score >= threshold){
             out[j] = arr[i];
             j++;
         }

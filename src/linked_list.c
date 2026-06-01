@@ -3,8 +3,7 @@
 // signly liked list
 
 Node* initList(Node* list){
-    list = (Node*)malloc(sizeof(Node));
-    list->next = NULL;
+    list = NULL;
     return list;
 }
 
@@ -16,10 +15,15 @@ Node* createnewNode(int value){
     return newnode;
 }
 
-Node* insertBeginning(Node* list, int value){
+int insertBeginning(Node** list, int value){
+    if(*list == NULL){
+        *list = createnewNode(value);
+        return 0;
+    }
     Node* newnode = createnewNode(value); 
-    newnode->next = list;
-    return newnode;
+    newnode->next = *list;
+    *list = newnode;
+    return 0;
 }
 
 
@@ -35,10 +39,15 @@ Node* insertEnd(Node* list, int value){
 
 
 Node* insertAtPosition(Node* list, int pos, int value){
+    if(list == NULL){
+        list = createnewNode(value);
+        return list;
+    }
+
     Node* newNode = createnewNode(value);
     Node* curr = list;
     int i = 0;
-    while(i != pos - 1 && curr != NULL){
+    while(i != pos - 1 && curr->next != NULL){
         curr = curr->next;
         i++;
     }

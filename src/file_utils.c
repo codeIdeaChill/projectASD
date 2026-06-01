@@ -11,10 +11,3 @@ int createBinaryFile(const char *filename)
     return 0;
 }
 
-
-int main()
-{
-    createBinaryFile("students.bin");
-
-    return 0;
-}

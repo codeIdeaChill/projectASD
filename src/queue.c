@@ -59,19 +59,3 @@ int rear_front (Queue* Q)
         printf("rear : %d\n", Q->rear->data);
     }
 }
-
-int main(){
-     Queue Q;
-     int deletedValue;
-     initQueue(&Q);
-     
-     enqueue(&Q, 50);
-     enqueue(&Q, 60);
-     enqueue(&Q, 70);
-
-     deletedValue = dequeue(&Q);
-     printf("Deleted value: %d\n", deletedValue);
-     rear_front(&Q);
-
-    return 0;
-}
