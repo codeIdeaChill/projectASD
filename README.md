@@ -67,6 +67,10 @@ reverseString
 countVowels
 countConsonants
 countWords
+initList
+insertBeginning
+insertEnd
+insertAtPosition
 bonus products
 
 ```
