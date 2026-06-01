@@ -67,6 +67,10 @@ transposeMatrix
 fillArray.
 resizeArray
 reverseString
+//isPalindrome
+// removeChar
+//removeSpaces
+//compareIgnoreCase
 ```
 
 

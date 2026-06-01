@@ -16,3 +16,11 @@ int my_strncmp(const char* a,const char* b,int n);
 void toUpperCase(char* s);
 //tolower():
 void toLowerCase(char* s);
+//isPalindrome
+int isPalindrome(const char* s);
+// removeChar
+void removeChar(char* s, char c);
+//removeSpaces
+void removeSpaces(char* s);
+//compareIgnoreCase
+int compareIgnoreCase(const char* a, const char* b);

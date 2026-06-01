@@ -135,4 +135,108 @@ int countWords(const char* s){
         }
     }
     return count;
+
+    //isPalindrome
+int isPalindrome(const char* s){
+    int i=0;
+    int j=my_strlen(s);
+    while(i<j){
+        if(s[i]!=s[j]){
+            return 0;
+        }
+        i++;
+        j--;
+    }
+    return 1;
 }
+
+// removeChar
+void removeChar(char* s, char c){
+    int i=0;
+    int j=0;
+    for(i=0;s[i]!=NULL;i++){
+        s[j]=s[i];
+        j++;
+    }
+}
+
+//removeSpaces
+void removeSpaces(char* s){
+    int i=0;
+    int j=0;
+    for(i=0;s[i]!=NULL;i++){
+        if(s[i]!=" " && s[i]!="\t"){
+            s[j]=s[i];
+            j++;
+        }
+    }
+}
+
+//compareIgnoreCase
+int compareIgnoreCase(const char* a, const char* b){
+    int i=0;
+     while(a[i] !='\0'&& b[i] !='\0' && tolower(a[i])==tolower(b[i])){
+        i++;
+    }
+    return tolower(a[i]) - tolower(b[i]);
+}
+}
+<<<<<<< HEAD
+=======
+
+int main(){
+
+    int x = my_strlen("spider man");
+    printf("the size is :%d\n",x);
+
+
+    char dest[40];
+    my_strcpy(dest,"hello world");
+    printf("%s\n",dest);
+
+    //the same variable 'dest' above..
+    my_strncpy(dest,"hello again", 8 );
+    printf("%s\n",dest);
+
+
+
+    char str[40]="lengends never";
+    my_strcat(str," die");
+    printf("%s\n", str);
+
+    
+    printf("%d\n",my_strcmp("ronaldo","ronaldinho"));
+
+
+    printf("%d\n",my_strncmp("neymar","neymar jr",6));
+
+
+    char WORD[]="Hello World";
+    printf("%s----> ",WORD);
+    toUpperCase(WORD);
+    printf("%s\n",WORD);
+
+
+    char word[]="Hello World";
+    printf("%s----> ",word);
+    toLowerCase(word);
+    printf("%s\n",word);
+    //reserve and count vowel and constant
+    char s[] = "bouganoura";
+
+    reverseString(s);
+    printf("%s\n", s);   //sdnegeL
+
+    printf("Vowels: %d\n", countVowels(s));    
+    printf("Consonants: %d\n", countConsonants(s)) ;
+    //count word
+    char s3[] = "Legends never lose";
+    printf("Words: %d\n", countWords(s3));
+
+
+    
+
+    
+    return 0;
+}
+>>>>>>> 102fd7d27ba1de603cffecc12335ee7dec4b8815
